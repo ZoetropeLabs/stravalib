@@ -35,6 +35,8 @@ class BaseEntity(object):
 
         Only defined attributes will be set; warnings will be logged for invalid attributes.
         """
+
+        self.raw_response_dict = d
         for (k, v) in d.items():
             # Handle special keys such as `hub.challenge` in `SubscriptionCallback`
             if '.' in k:
